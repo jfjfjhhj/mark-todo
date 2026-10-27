@@ -7,6 +7,7 @@ const form = document.getElementById('todo-form');
 const input = document.getElementById('todo-input');
 const list = document.getElementById('todo-list');
 const emptyTip = document.getElementById('todo-empty');
+const clearBtn = document.getElementById('clear-done');
 
 let items = loadItems();
 
@@ -47,6 +48,7 @@ function render() {
     list.appendChild(li);
   });
   emptyTip.style.display = items.length === 0 ? 'block' : 'none';
+  clearBtn.disabled = !items.some((item) => item.done);
 }
 
 function addItem(text) {
@@ -66,6 +68,14 @@ function removeItem(index) {
   saveItems();
   render();
 }
+
+function clearDone() {
+  items = items.filter((item) => !item.done);
+  saveItems();
+  render();
+}
+
+clearBtn.addEventListener('click', clearDone);
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();

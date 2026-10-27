@@ -101,3 +101,20 @@ h1 {
   color: var(--muted);
   font-size: 14px;
 }
+
+.clear-done {
+  width: 100%;
+  margin-top: 16px;
+  padding: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.clear-done:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
