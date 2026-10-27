@@ -1,4 +1,4 @@
-# 马克待办 (MarkTodo)
+# 马克待办 MarkTodo（main 分支）
 
 一个用来练习 Git 工作流的极简待办应用。
 
